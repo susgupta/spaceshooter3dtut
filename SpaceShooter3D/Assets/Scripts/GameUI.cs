@@ -2,38 +2,60 @@
 using System.Collections;
 
 public class GameUI : MonoBehaviour {
-
-    //track internally whether UI elements are hidden
-    bool isDisplayed = true;
-
-    //reference to play button
+    
+    //reference to UI objects
     [SerializeField]
-    GameObject playButton;
+    GameObject gameUI;
+
+    [SerializeField]
+    GameObject mainMenu;
+
+    //reference to spawn player
+    [SerializeField]
+    GameObject playerPrefab;
+
+    [SerializeField]
+    GameObject playerStartPosition;
+
+    void Start()
+    {
+        DelayMainMenuDisplay();
+    }
 
     void OnEnable()
     {
         //add delegate to subscribe
-        EventManager.onStartGame += HidePanel;
+        EventManager.onStartGame += ShowGameUI;
+        EventManager.onPlayerDeath += ShowMainMenu;
     }
 
     void OnDisable()
     {
         //remove delegate to un0subscribe
-        EventManager.onStartGame -= HidePanel;
+        EventManager.onStartGame -= ShowGameUI;
+        EventManager.onPlayerDeath -= ShowMainMenu;
     }
 
-    //hide panel UI
-    void HidePanel()
+    //show main menu UI
+    void ShowMainMenu()
     {
-        //simple toggle
-        isDisplayed = !isDisplayed;
-        playButton.SetActive(isDisplayed);        
+        //add delay to show particle effects
+        Invoke("DelayMainMenuDisplay", Asteroid.destructionDelay * 2.5f);            
     }
 
-	//to begin game
-    public void PlayGame()
+    void DelayMainMenuDisplay()
     {
-        //use event manager to start game
-        EventManager.StartGame();
+        mainMenu.SetActive(true);
+        gameUI.SetActive(false);
+    }
+
+    //show game UI
+    void ShowGameUI()
+    {
+        mainMenu.SetActive(false);
+        gameUI.SetActive(true);
+
+        //instantiate player
+        Instantiate(playerPrefab, playerStartPosition.transform.position, playerStartPosition.transform.rotation);
     }
 }

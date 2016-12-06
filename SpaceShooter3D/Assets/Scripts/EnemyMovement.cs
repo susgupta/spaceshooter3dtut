@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[DisallowMultipleComponent]
+[RequireComponent(typeof(EnemyAttack))]
+[RequireComponent(typeof(TrailRenderer))]
 public class EnemyMovement : MonoBehaviour {
 
     //reference to target
@@ -27,12 +30,14 @@ public class EnemyMovement : MonoBehaviour {
     {
         //subscribe to event
         EventManager.onPlayerDeath += FindMainCamera;
+        EventManager.onStartGame += SelfDestruct;
     }
 
     void OnDisable()
     {
         //un-subscribe to event
         EventManager.onPlayerDeath -= FindMainCamera;
+        EventManager.onStartGame -= SelfDestruct;
     }
 
     void Update()
@@ -133,5 +138,11 @@ public class EnemyMovement : MonoBehaviour {
     {
         GameObject mainCameraObject = GameObject.FindGameObjectWithTag("MainCamera");
         target = mainCameraObject.transform;
+    }
+
+    //self destruct on enemy
+    void SelfDestruct()
+    {
+        Destroy(gameObject);
     }
 }

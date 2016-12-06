@@ -61,6 +61,9 @@ public class Shield : MonoBehaviour {
         //if health is 0 or lower, invoke blow up on explosion
         if (currentHealth < 1)
         {
+            //send event for player death
+            EventManager.PlayerDeath();
+            //create explosion
             Explosion explosion = GetComponent<Explosion>();
             explosion.BlowUp();
             //TODO - remove life from lives

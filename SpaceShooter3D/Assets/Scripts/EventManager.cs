@@ -7,11 +7,13 @@ public class EventManager : MonoBehaviour {
 	public delegate void StartGameDelegate();
     public delegate void HandleDamageDelegate(float amount);
     public delegate void PlayerDeathDelegate();
+    public delegate void ScorePointsDelegate(int amount);
 
     //accessors
     public static StartGameDelegate onStartGame;
     public static HandleDamageDelegate onHandleDamage;
     public static PlayerDeathDelegate onPlayerDeath;
+    public static ScorePointsDelegate onScorePoints;
 
     //methods
     public static void StartGame()
@@ -38,6 +40,15 @@ public class EventManager : MonoBehaviour {
         if (onPlayerDeath != null)
         {
             onPlayerDeath();
+        }
+    }
+
+    public static void ScorePoints(int score)
+    {
+        Debug.Log("Score Points value : " + score);
+        if (onScorePoints != null)
+        {
+            onScorePoints(score);
         }
     }
 }

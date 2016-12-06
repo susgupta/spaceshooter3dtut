@@ -32,14 +32,16 @@ public class Explosion : MonoBehaviour {
             Hit(contactPoint.point);
         }
     }
-
+    
     //used for effects as well destroy
     public void BlowUp()
     {
-        //send event for player death
-        EventManager.PlayerDeath();   
-        //simply instaniate
-        Instantiate(blowUp, transform.position, Quaternion.identity);
+        //simply instaniate the effect
+        GameObject blowUpExplosion = Instantiate(blowUp, transform.position, Quaternion.identity) as GameObject;
+
+        //delay destroy the particle effect
+        Destroy(blowUpExplosion, 2.5f);
+
         //destroy the attached gameobject
         Destroy(gameObject);
     }

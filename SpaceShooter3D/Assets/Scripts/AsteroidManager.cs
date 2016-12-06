@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class AsteroidManager : MonoBehaviour {
 
@@ -12,25 +13,25 @@ public class AsteroidManager : MonoBehaviour {
 
     //prefab reference explicit for asteroid
     [SerializeField]
-    Asteroid asteroid;
+    Asteroid asteroidPreFab;
 
+    //list of created asteroids
+    List<Asteroid> asteroidPreFabList = new List<Asteroid>();
+    
     void OnEnable()
     {
         //add delegate to subscribe
         EventManager.onStartGame += PlaceAsteroids;
+        EventManager.onPlayerDeath += DestroyAsteroids;
     }
 
     void OnDisable()
     {
         //remove delegate to un0subscribe
         EventManager.onStartGame -= PlaceAsteroids;
+        EventManager.onPlayerDeath -= DestroyAsteroids;
     }
-
-    //void Start()
-    //{
-    //    PlaceAsteroids();
-    //}
-
+    
 	//place asteroids
     void PlaceAsteroids()
     {
@@ -52,13 +53,29 @@ public class AsteroidManager : MonoBehaviour {
     //create asteroid
     void InstantiateAsteroid(int x, int y, int z)
     {
-        Instantiate(asteroid, 
-                    new Vector3(
-                        transform.position.x + (x * gridSpacing) + AsteroidOffSet(), 
-                        transform.position.y + (y * gridSpacing) + AsteroidOffSet(), 
-                        transform.position.z + (z * gridSpacing) + AsteroidOffSet()), 
-                    Quaternion.identity, 
-                    transform);
+        Asteroid createdAsteroid = Instantiate(asteroidPreFab, 
+                                                new Vector3(
+                                                    transform.position.x + (x * gridSpacing) + AsteroidOffSet(), 
+                                                    transform.position.y + (y * gridSpacing) + AsteroidOffSet(), 
+                                                    transform.position.z + (z * gridSpacing) + AsteroidOffSet()), 
+                                                Quaternion.identity, 
+                                                transform)
+                                                as Asteroid;
+
+        //add to list
+        asteroidPreFabList.Add(createdAsteroid);
+    }
+
+    //destroy asteroids from list
+    void DestroyAsteroids()
+    {
+        foreach(Asteroid currentAsteroid in asteroidPreFabList)
+        {
+            currentAsteroid.SelfDestruct();
+        }
+
+        //purge list
+        asteroidPreFabList.Clear();
     }
 
     //offset for asteroid

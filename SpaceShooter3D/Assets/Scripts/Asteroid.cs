@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[DisallowMultipleComponent]
+[RequireComponent(typeof(Explosion))]
 public class Asteroid : MonoBehaviour {
 
     //reference for scale values
@@ -12,7 +14,10 @@ public class Asteroid : MonoBehaviour {
     //reference for rotation values
     [SerializeField]
     float rotationOffset = 100f;
-    
+
+    //want same value for asteroid delay destruction for EVERY instance
+    public static float destructionDelay = 1.0f;
+
     //store reference of transform
     Transform currentTransform;
 
@@ -43,5 +48,22 @@ public class Asteroid : MonoBehaviour {
     {
         //apply random rotation
         currentTransform.Rotate(randomRotation * Time.deltaTime);
+    }
+
+    //self-destruct on the asteroid
+    public void SelfDestruct()
+    {
+        //create timer for destruction effect
+        float timer = Random.Range(0, destructionDelay);
+        //invoke boom with timer value
+        Invoke("GoBoom", timer);
+    }
+
+    //call explosion effect
+    public void GoBoom()
+    {
+        //call explosion
+        Explosion explosion = GetComponent<Explosion>();
+        explosion.BlowUp();
     }
 }
