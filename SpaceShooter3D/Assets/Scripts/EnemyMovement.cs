@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[DisallowMultipleComponent]
 [RequireComponent(typeof(EnemyAttack))]
 [RequireComponent(typeof(TrailRenderer))]
 public class EnemyMovement : MonoBehaviour {

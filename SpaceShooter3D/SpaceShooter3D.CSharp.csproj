@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\FollowCam.cs" />
     <Compile Include="Assets\Scripts\GameUI.cs" />
+    <Compile Include="Assets\Scripts\InfiniteStarfield.cs" />
     <Compile Include="Assets\Scripts\Laser.cs" />
     <Compile Include="Assets\Scripts\PlayGameButton.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
