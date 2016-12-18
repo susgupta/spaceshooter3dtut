@@ -3,32 +3,17 @@ using System.Collections;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Explosion))]
-public class Asteroid : MonoBehaviour {
+public class Asteroid : AbstractSpaceObject{
 
     //reference for scale values
     [SerializeField]
     float minScale = 0.8f;
     [SerializeField]
     float maxScale = 1.2f;
-
-    //reference for rotation values
-    [SerializeField]
-    float rotationOffset = 100f;
-
+    
     //want same value for asteroid delay destruction for EVERY instance
     public static float destructionDelay = 1.0f;
-
-    //store reference of transform
-    Transform currentTransform;
-
-    //reference for rotation
-    Vector3 randomRotation;
     
-    void Awake()
-    {
-        currentTransform = transform;
-    }
-
     void Start()
     {
         //random size
@@ -39,17 +24,9 @@ public class Asteroid : MonoBehaviour {
         currentTransform.localScale = scale;
 
         //random rotation
-        randomRotation.x = Random.Range(-rotationOffset, rotationOffset);
-        randomRotation.y = Random.Range(-rotationOffset, rotationOffset);
-        randomRotation.z = Random.Range(-rotationOffset, rotationOffset);
+        CreateRandomRotation();
     }
-
-    void Update()
-    {
-        //apply random rotation
-        currentTransform.Rotate(randomRotation * Time.deltaTime);
-    }
-
+    
     //self-destruct on the asteroid
     public void SelfDestruct()
     {

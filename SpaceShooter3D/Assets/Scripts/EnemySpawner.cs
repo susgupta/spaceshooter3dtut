@@ -54,5 +54,7 @@ public class EnemySpawner : MonoBehaviour {
     void StopSpawning()
     {
         CancelInvoke("SpawnEnemy");
+        //reset number of enemies
+        currentNumberSpawnedEnemies = 0;
     }
 }

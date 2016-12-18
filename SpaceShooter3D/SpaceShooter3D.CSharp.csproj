@@ -69,6 +69,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\Sample Supporting Emitters\DetonatorSprayHelper.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\Detonator.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorBurstEmitter.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorCloudRing.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorComponent.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorFireball.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorForce.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorGlow.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorHeatwave.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorLight.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorShockwave.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorSmoke.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorSound.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorSparks.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorSpray.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\TestScene\DetonatorTest.cs" />
+    <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\TestScene\TouchToMouse.cs" />
     <Compile Include="Assets\Particle Effects\GUI Animator\GUI Animator FREE\Demo (CSharp)\Scripts\GA_FREE_Demo00.cs" />
     <Compile Include="Assets\Particle Effects\GUI Animator\GUI Animator FREE\Demo (CSharp)\Scripts\GA_FREE_Demo01.cs" />
     <Compile Include="Assets\Particle Effects\GUI Animator\GUI Animator FREE\Demo (CSharp)\Scripts\GA_FREE_Demo02.cs" />
@@ -81,6 +98,8 @@
     <Compile Include="Assets\Particle Effects\GUI Animator\GUI Animator FREE\Demo (CSharp)\Scripts\GA_FREE_DemoPlaySound.cs" />
     <Compile Include="Assets\Particle Effects\GUI Animator\GUI Animator FREE\Demo (CSharp)\Scripts\GA_FREE_OpenOtherScene.cs" />
     <Compile Include="Assets\Particle Effects\GUI Animator\GUI Animator FREE\Demo Basic (CSharp)\Scripts\GUIAnimatorFREEDemo.cs" />
+    <Compile Include="Assets\Scripts\AbstractSpaceObject.cs" />
+    <Compile Include="Assets\Scripts\AfterburnerPhysicsForce.cs" />
     <Compile Include="Assets\Scripts\Asteroid.cs" />
     <Compile Include="Assets\Scripts\AsteroidManager.cs" />
     <Compile Include="Assets\Scripts\EnemyAttack.cs" />
@@ -92,6 +111,8 @@
     <Compile Include="Assets\Scripts\GameUI.cs" />
     <Compile Include="Assets\Scripts\InfiniteStarfield.cs" />
     <Compile Include="Assets\Scripts\Laser.cs" />
+    <Compile Include="Assets\Scripts\PickUp.cs" />
+    <Compile Include="Assets\Scripts\PickUpManager.cs" />
     <Compile Include="Assets\Scripts\PlayGameButton.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
@@ -102,6 +123,7 @@
     <Compile Include="Assets\Scripts\Timer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Particle Effects\Detonator Explosion Framework\Resources\Detonator\Textures\HeatDistort.shader" />
     <None Include="Assets\Particle Effects\Elementals\Readme.txt" />
     <None Include="Assets\Particle Effects\GUI Animator\GUI Animator FREE\!How to.txt" />
     <None Include="Assets\Particle Effects\GUI Animator\GUI Animator FREE\Readme.txt" />
