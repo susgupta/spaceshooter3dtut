@@ -57,25 +57,7 @@ public class PlayerMovement : MonoBehaviour {
             {
                 currentThruster.Intensity(Input.GetAxis("Vertical"));
             }
-        }
-        
-        //turn on thruster effects
-        //if (Input.GetKeyDown(KeyCode.W) ||Input.GetKeyDown(KeyCode.UpArrow))
-        //{
-        //    ProcessThrusters(true);
-        //}
-        //else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
-        //{
-        //    ProcessThrusters(false);
-        //}        
+        }       
     }
-
-    //common player processing thrusters
-    //private void ProcessThrusters(bool activate)
-    //{
-    //    foreach (Thruster currentThruster in thruster)
-    //    {
-    //        currentThruster.Activate(activate);
-    //    }
-    //}
+    
 }
