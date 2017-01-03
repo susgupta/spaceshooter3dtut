@@ -50,6 +50,7 @@ public class Score : MonoBehaviour {
     void AddScore(int amount)
     {
         score += amount;
+        DisplayScore();
     }
 
     //update the score display

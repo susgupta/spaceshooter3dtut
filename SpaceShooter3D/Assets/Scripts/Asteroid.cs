@@ -40,7 +40,7 @@ public class Asteroid : AbstractSpaceObject{
     public void GoBoom()
     {
         //call explosion
-        Explosion explosion = GetComponent<Explosion>();
-        explosion.BlowUp();
+        Explosion explosion = GetComponent<Explosion>();        
+        explosion.BlowUp();                
     }
 }

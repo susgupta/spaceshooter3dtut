@@ -101,7 +101,6 @@
     <Compile Include="Assets\Scripts\AbstractGameMenu.cs" />
     <Compile Include="Assets\Scripts\AbstractSpaceObject.cs" />
     <Compile Include="Assets\Scripts\AbstractWeapon.cs" />
-    <Compile Include="Assets\Scripts\AfterburnerPhysicsForce.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Scripts\Asteroid.cs" />
     <Compile Include="Assets\Scripts\AsteroidManager.cs" />
@@ -113,9 +112,12 @@
     <Compile Include="Assets\Scripts\EventManager.cs" />
     <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\FollowCam.cs" />
+    <Compile Include="Assets\Scripts\Fractal.cs" />
     <Compile Include="Assets\Scripts\GameUI.cs" />
     <Compile Include="Assets\Scripts\InfiniteStarfield.cs" />
     <Compile Include="Assets\Scripts\Laser.cs" />
+    <Compile Include="Assets\Scripts\LaserBullet.cs" />
+    <Compile Include="Assets\Scripts\LaserBulletBlaster.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PanelManager.cs" />
     <Compile Include="Assets\Scripts\PickUp.cs" />

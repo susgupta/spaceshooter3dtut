@@ -7,17 +7,46 @@ public class PlayerInput : MonoBehaviour {
     [SerializeField]
     Laser[] lasers;
 
+    //reference to all shot spawns
+    [SerializeField]
+    LaserBulletBlaster[] laserBulletBlasters;
+
+    //toggle indicator for weapon to lasers
+    private bool toggleToLasers = false;
+
 	void Update()
     {
-        //for now space-bar is laser shoot
+        //for now use 't' as toggle between lasers and bullets
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (toggleToLasers == false)
+            {
+                toggleToLasers = true;
+            }
+            else if (toggleToLasers == true)
+            {
+                toggleToLasers = false;
+            }
+        }
+        
+        //for now space-bar is shooting
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //fire all lasers
-            foreach(Laser laser in lasers)
+            if (toggleToLasers)
             {
-                //get laser position
-                //Vector3 laserPosition = transform.position + (transform.forward * laser.Distance());
-                laser.FireLaser();
+                //fire all lasers
+                foreach (Laser laser in lasers)
+                {
+                    laser.FireLaser();
+                }
+            }
+            else
+            {
+                //fire laser bullets
+                foreach (LaserBulletBlaster laserBulletBlaster in laserBulletBlasters)
+                {
+                    laserBulletBlaster.ShootBullet();
+                }
             }
         }
     }

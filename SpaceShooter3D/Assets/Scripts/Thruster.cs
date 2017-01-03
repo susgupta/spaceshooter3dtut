@@ -17,28 +17,7 @@ public class Thruster : MonoBehaviour {
     {
         //ensure lights, trail etc are disabled
         thrusterLight.intensity = 0;
-    }
-
-    ////method to do various trail renderer effects
-    //public void Activate(bool activtate = true)
-    //{
-    //    if (activtate)
-    //    {
-    //        trailRenderer.enabled = true;
-    //        thrusterLight.enabled = true;
-    //        //turn on particle effects
-    //        //turn on sound
-    //        //etc.
-    //    }
-    //    else
-    //    {
-    //        trailRenderer.enabled = false;
-    //        thrusterLight.enabled = false;
-    //        //turn off particle effects
-    //        //turn off sound
-    //        //etc.
-    //    }
-    //}
+    }       
 
     //method to control intensity
     public void Intensity(float intent)

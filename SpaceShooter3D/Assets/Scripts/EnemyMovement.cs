@@ -42,7 +42,7 @@ public class EnemyMovement : MonoBehaviour {
     void Update()
     {
         //if no player target - return
-        if (!FindTarget())
+        if (!FindPlayer())
         {
             return;
         }
@@ -112,7 +112,7 @@ public class EnemyMovement : MonoBehaviour {
         }
     }
 
-    bool FindTarget()
+    bool FindPlayer()
     {
         if (target == null)
         {

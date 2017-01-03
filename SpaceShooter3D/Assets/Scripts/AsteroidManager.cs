@@ -71,7 +71,11 @@ public class AsteroidManager : MonoBehaviour {
     {
         foreach(Asteroid currentAsteroid in asteroidPreFabList)
         {
-            currentAsteroid.SelfDestruct();
+            //must check if asteroid was not previously destroyed by say the player
+            if (currentAsteroid != null)
+            {
+                currentAsteroid.SelfDestruct();
+            }            
         }
 
         //purge list
