@@ -69,6 +69,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\AutoDestroy.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\BM_WaveEffect.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\BasicBullet.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\BeamCollision.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\BeamLine.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\BeamParam.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\BeamWave.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\BillBoard.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\Create_MyLineMesh.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\Flash.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\GeroBeam.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\GeroBeamHit.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\GetColor_BeamLine.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\GetColor_Flash.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\GetColor_Particle.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\JumpScene.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\MouseTgt.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\MultiShooter.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\RandomRotate.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\ScaleWiggle.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\SceneMaster.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\ShooterRotate.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\ShotBase.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\ShotParticleEmitter.cs" />
+    <Compile Include="Assets\Particle Effects\BasicBeamShot\Script\ShotParticle_Scale.cs" />
     <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\Sample Supporting Emitters\DetonatorSprayHelper.cs" />
     <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\Detonator.cs" />
     <Compile Include="Assets\Particle Effects\Detonator Explosion Framework\System\DetonatorBurstEmitter.cs" />
@@ -118,6 +143,7 @@
     <Compile Include="Assets\Scripts\Laser.cs" />
     <Compile Include="Assets\Scripts\LaserBullet.cs" />
     <Compile Include="Assets\Scripts\LaserBulletBlaster.cs" />
+    <Compile Include="Assets\Scripts\LaserStreamBlaster.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PanelManager.cs" />
     <Compile Include="Assets\Scripts\PickUp.cs" />
@@ -134,6 +160,13 @@
   <ItemGroup>
     <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
+    <None Include="Assets\Particle Effects\BasicBeamShot\HowToUse_EN.txt" />
+    <None Include="Assets\Particle Effects\BasicBeamShot\HowToUse_JP.txt" />
+    <None Include="Assets\Particle Effects\BasicBeamShot\sh\AddColor_sh.shader" />
+    <None Include="Assets\Particle Effects\BasicBeamShot\sh\Add_UVScroll_sh.shader" />
+    <None Include="Assets\Particle Effects\BasicBeamShot\sh\BeamLine_sh.shader" />
+    <None Include="Assets\Particle Effects\BasicBeamShot\sh\GeroBeam_sh.shader" />
+    <None Include="Assets\Particle Effects\BasicBeamShot\sh\Sprite_Add_sh.shader" />
     <None Include="Assets\Particle Effects\Detonator Explosion Framework\Resources\Detonator\Textures\HeatDistort.shader" />
     <None Include="Assets\Particle Effects\Elementals\Readme.txt" />
     <None Include="Assets\Particle Effects\GUI Animator\GUI Animator FREE\!How to.txt" />

@@ -11,10 +11,14 @@ public class PlayerInput : MonoBehaviour {
     [SerializeField]
     LaserBulletBlaster[] laserBulletBlasters;
 
+    //reference to laser stream - for now only want one
+    [SerializeField]
+    LaserStreamBlaster laserStreamBlaster;
+    
     //toggle indicator for weapon to lasers
     private bool toggleToLasers = false;
-
-	void Update()
+    
+    void Update()
     {
         //for now use 't' as toggle between lasers and bullets
         if (Input.GetKeyDown(KeyCode.T))
@@ -26,6 +30,7 @@ public class PlayerInput : MonoBehaviour {
             else if (toggleToLasers == true)
             {
                 toggleToLasers = false;
+                laserStreamBlaster.StopLaserStream();
             }
         }
         
@@ -34,11 +39,7 @@ public class PlayerInput : MonoBehaviour {
         {
             if (toggleToLasers)
             {
-                //fire all lasers
-                foreach (Laser laser in lasers)
-                {
-                    laser.FireLaser();
-                }
+                laserStreamBlaster.FireLaserStream();                
             }
             else
             {
@@ -48,6 +49,16 @@ public class PlayerInput : MonoBehaviour {
                     laserBulletBlaster.ShootBullet();
                 }
             }
+        }
+
+        //if its space up
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if (toggleToLasers)
+            {
+                laserStreamBlaster.StopLaserStream();
+            }
+
         }
     }
 }
