@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAttack : MonoBehaviour {
+public class EnemyAttack : AbstractEnemyBehaviour {
 
-    //reference to target
-    [SerializeField]
-    Transform target;
     //reference to laser
     [SerializeField]
     Laser laser;
@@ -16,7 +13,7 @@ public class EnemyAttack : MonoBehaviour {
     void Update()
     {
         //if no player target - return
-        if (!FindTarget())
+        if (!FindTarget(GetTargetTagFromTargetState()))
         {
             return;
         }
@@ -55,9 +52,14 @@ public class EnemyAttack : MonoBehaviour {
         
         if (Physics.Raycast(laser.transform.position, direction, out hit, laser.Distance()))
         {
-            //if hit the player
-            if (hit.transform.CompareTag("Player"))
+
+            string targetTag = GetTargetTagFromTargetState();
+            Debug.Log("Targeting: " + targetTag);
+
+            //if hit the target
+            if (hit.transform.CompareTag(targetTag))
             {
+                Debug.Log("Have hit line of sight on: " + targetTag);
                 hitPosition = hit.transform.position;
                 return true;
             }
@@ -71,25 +73,5 @@ public class EnemyAttack : MonoBehaviour {
     {
         Debug.Log("Fire Lasers!!!");
         laser.FireLaser(hitPosition, target);        
-    }
-
-    bool FindTarget()
-    {
-        if (target == null)
-        {
-            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-            //now check if player is not destroyed
-            if (playerObject != null)
-            {
-                target = playerObject.transform;
-            }
-        }
-
-        if (target == null)
-        {
-            return false;
-        }
-
-        return true;
-    }
+    }    
 }

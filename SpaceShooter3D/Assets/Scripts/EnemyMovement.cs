@@ -3,11 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(EnemyAttack))]
 [RequireComponent(typeof(TrailRenderer))]
-public class EnemyMovement : MonoBehaviour {
-
-    //reference to target
-    [SerializeField]
-    Transform target;
+public class EnemyMovement : AbstractEnemyBehaviour {
 
     //reference to rotational damp
     [SerializeField]
@@ -42,7 +38,7 @@ public class EnemyMovement : MonoBehaviour {
     void Update()
     {
         //if no player target - return
-        if (!FindPlayer())
+        if (!FindTarget(GetTargetTagFromTargetState()))
         {
             return;
         }
@@ -111,27 +107,7 @@ public class EnemyMovement : MonoBehaviour {
             Turn();
         }
     }
-
-    bool FindPlayer()
-    {
-        if (target == null)
-        {
-            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-            //now check if player is not destroyed
-            if (playerObject != null)
-            {
-                target = playerObject.transform;
-            }            
-        }
-
-        if (target == null)
-        {
-            return false;
-        }
-
-        return true;
-    }
-
+    
     //method for enemy to find main camera
     void FindMainCamera()
     {
@@ -143,5 +119,5 @@ public class EnemyMovement : MonoBehaviour {
     void SelfDestruct()
     {
         Destroy(gameObject);
-    }
+    }    
 }
